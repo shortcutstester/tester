@@ -1,0 +1,42 @@
+/*
+
+Don't touch the file unless you actually know what you doin!
+*/
+/*let url =  "https://youtu.be/feq6MOg3qpA";
+let citem = "Background Play";
+let wVer = "2.3";*/
+if(wVer != "2.3"){
+    let alert = new Alert();alert.title = "YouTube++ shortcut out if date";alert.message = "You will be redirected to the update page";alert.addAction("OK")
+    await alert.presentAlert()
+    Safari.open("https://routinehub.co/download/15815")
+    }else{
+    let web = new WebView(); web.loadURL(url);
+    await web.waitForLoad();
+
+    let vidURL = await web.evaluateJavaScript(`
+    function getVid(){
+    return document.querySelector('video').src + 'rkk'+ 'title'
+    }getVid();
+    `, false);
+
+    Pasteboard.copy(vidURL)
+
+    if(citem == "Background Play" || citem == null){
+    vidURL = vidURL.split("rkk")
+    await Safari.open("vlc://" + vidURL[0]);
+    Pasteboard.copy("https://shortcuts.sethusenthil.com/youtube/index.html#" + vidURL[0] + "&title=" + vidURL[1])
+    await Safari.open("shortcuts://run-shortcut?name=YouTube%20%2B%2B%20%20%E2%96%B6%EF%B8%8F&input=" + "playonly")
+    }else {
+    if(citem == "Download Video"){
+    vidURL = vidURL.split("rkk")
+    await Safari.open("vlc://" + vidURL[0]);
+    await Safari.open("shortcuts://run-shortcut?name=YouTube%20%2B%2B%20%20%E2%96%B6%EF%B8%8F&input=" + "video")
+    }else if (citem == "Download Audio"){
+
+    Safari.open("shortcuts://run-shortcut?name=YouTube%20%2B%2B%20%20%E2%96%B6%EF%B8%8F&input=" + "audio" )
+    } }
+    /*await web.loadURL("https://shortcuts.sethusenthil.com/ytbackground/#" + wVer); await web.present(false)*/
+
+    let versionName = "initTitle"
+    let identity = "shajajq737$27"
+    }
